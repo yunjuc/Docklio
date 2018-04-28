@@ -2,26 +2,31 @@
 '''An app to interpret sms and execute the command'''
 from flask import Flask, request
 from twilio.twiml.messaging_response import Message, MessagingResponse
-from subprocess import call 
- 
+from subprocess import call
+import os
+import sys
+
+
 app = Flask(__name__)
- 
- 
+
+
 @app.route('/sms', methods=['POST'])
 def sms():
-    '''Parse receving message'''
-    number = request.form['From']
+    '''Receive message and respond'''
     body = request.form['Body']
-    
-
     resp = MessagingResponse()
-    resp.message('Hello {}, you said: {}'.format(number, body))
-    print(resp)
+
+    if body == 'docker deploy' or body == 'Docker deploy':
+        status = os.system('./run')
+        if status == 0:
+            resp.message('Woohoo! Your app has been deployed.')
+        else:
+            resp.message('Your app is not deployed.')
+    else:
+        resp.message('Sorry, we cannot recognize the command.')
+
     return str(resp)
 
-def deploy():
-    '''Deploy container'''
-    call('ls')
- 
+
 if __name__ == '__main__':
     app.run()
