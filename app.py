@@ -2,7 +2,6 @@
 '''An app to interpret sms and execute the command'''
 from flask import Flask, request
 from twilio.twiml.messaging_response import Message, MessagingResponse
-from subprocess import call
 import os
 import sys
 
