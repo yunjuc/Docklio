@@ -19,16 +19,19 @@ def sms():
     resp = MessagingResponse()
 
     # check command
-    if body == 'docker deploy' or body == 'Docker deploy':
-
-        # execute deploymenet script
-        status = os.system('./run')
-
-        # confirm success for fail
+    if body == 'docker start' or body == 'Docker start':
+        status = os.system('docker start b1cef5626b38')
         if status == 0:
-            resp.message('Woohoo! Your app has been deployed.')
+            resp.message('Woohoo! Your app has started.')
         else:
-            resp.message('Your app is not deployed.')
+            resp.message('Your app is not started.')
+    elif body == 'docker stop' or body == 'Docker stop':
+        status = os.system('docker stop b1cef5626b38')
+        if status == 0:
+            resp.message('You app has stopped.')
+        else:
+            resp.message('Sorry, operation failed.')
+
     else:
         resp.message('Sorry, we cannot recognize the command.')
 
