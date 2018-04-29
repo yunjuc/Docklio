@@ -20,7 +20,7 @@ def sms():
 
     # check command
     if body == 'docker start' or body == 'Docker start':
-        # get container id by name
+        # get container id by name and start
         status = os.system('docker start $(docker ps -a | grep p0bailey/docker-flask | head -1 | cut -d " " -f1)')
         if status == 0:
             resp.message('Woohoo! Your app has started.')
