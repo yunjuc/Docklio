@@ -20,15 +20,16 @@ def sms():
 
     # check command
     if body == 'docker start' or body == 'Docker start':
-        status = os.system('docker start b1cef5626b38')
+        # get container id by name
+        status = os.system('docker start $(docker ps -a | grep p0bailey/docker-flask | head -1 | cut -d " " -f1)')
         if status == 0:
             resp.message('Woohoo! Your app has started.')
         else:
             resp.message('Your app is not started.')
     elif body == 'docker stop' or body == 'Docker stop':
-        status = os.system('docker stop b1cef5626b38')
+        status = os.system('docker stop $(docker ps | grep p0bailey/docker-flask | head -1 | cut -d " " -f1)')
         if status == 0:
-            resp.message('You app has stopped.')
+            resp.message('Your app has stopped.')
         else:
             resp.message('Sorry, operation failed.')
 
