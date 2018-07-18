@@ -8,3 +8,8 @@ The project is a prove of concept to demo how users can use SMS message to contr
 
 The sample Dockerfile and application is based off the work of:  
 [p0bailey](https://github.com/p0bailey)/[docker-flask](https://github.com/p0bailey/docker-flask)
+
+## Team
+Yunju Chen [Github] (https://github.com/yunjuc)   
+Su Kalia [Github] (https://github.com/vkalia602)  
+David Yoon [Github](https://github.com/daveyoon64) 
