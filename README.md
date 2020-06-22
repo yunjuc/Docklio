@@ -1,4 +1,4 @@
-# DOCKLIO
+# Docklio
 ![logo](https://github.com/yunjuc/Docklio/blob/master/docklio.jpg)
 ## Introduction
 If you already have your Docker environment set up, how about deploying your app with single push-the-button? That’s what we want to achieve with Docklio — to make system admin’s life easier. Docklio allows users to control their Docker containers by sending text messages and Docklio will send back a message to confirm the container status.
@@ -10,6 +10,6 @@ The sample Dockerfile and application is based off the work of:
 [p0bailey](https://github.com/p0bailey)/[docker-flask](https://github.com/p0bailey/docker-flask)
 
 ## Team
-Yunju Chen [Github] (https://github.com/yunjuc)   
-Su Kalia [Github] (https://github.com/vkalia602)  
-David Yoon [Github](https://github.com/daveyoon64) 
+[Yunju Chen](https://github.com/yunjuc)   
+[Su Kalia](https://github.com/vkalia602)  
+[David Yoon](https://github.com/daveyoon64) 
